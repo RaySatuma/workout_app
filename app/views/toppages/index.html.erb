@@ -1,6 +1,10 @@
 <h1>hi</h1>
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% else %>
 <ul>
   <% @user.each do |user|%>
     <li><%= user.name %> : <%= user.id %></li>
   <% end %>
 </ul>
+<% end %>
