@@ -59,3 +59,6 @@ gem 'kaminari'
 
 gem 'devise' 
 
+gem 'rexml'
+
+gem 'capybara'
