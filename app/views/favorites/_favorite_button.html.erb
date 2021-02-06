@@ -1,0 +1,29 @@
+  <ul class="list-unstyled">
+  <% posts.each do |post|%>
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to post.user.name, user_path(post.user) %><span class="text-muted">posted at<%= post.created_at %></span>
+        </div>
+        <div>
+          <p><%= post.content %></p>
+        </div>
+        <div class="row">
+        <% if current_user.fav?(post) %>
+            <%= form_with(model: current_user.favorites.find_by(favorite_id: post.id), local: true, method: :delete) do |f| %>
+            <%= hidden_field_tag :favorite_id, post.id %>
+            <%= f.submit 'いいね解除', class: 'btn btn-danger btn-sm' %>
+          <% end %>
+          <% else %>
+            <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
+            <%= hidden_field_tag :favorite_id, post.id %>
+            <%= f.submit 'いいね', class: 'btn btn-primary btn-sm' %>
+         <% end %>
+        <% end %>
+        </div>
+    </li>
+  <% end %>
+   <%= paginate posts %> 
+</ul>
+  
