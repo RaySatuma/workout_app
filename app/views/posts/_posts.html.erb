@@ -9,9 +9,22 @@
         <div>
           <p><%= post.content %></p>
         </div>
-        <div>
+        <div class="row">
           <% if current_user == post.user%>
             <%= link_to "削除", post, method: :delete, data: { confirm: "この投稿を削除しますか?" }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+            <div class="pl-2">
+              <% if current_user.fav?(post) %>
+                <%= form_with(model: current_user.favorites.find_by(favorite_id: post.id), local: true, method: :delete) do |f| %>
+                <%= hidden_field_tag :favorite_id, post.id %>
+                <%= f.submit 'いいね解除', class: 'btn btn-danger btn-sm' %>
+              <% end %>
+              <% else %>
+                <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
+                <%= hidden_field_tag :favorite_id, post.id %>
+                <%= f.submit 'いいね', class: 'btn btn-primary btn-sm' %>
+              <% end %>
+            </div>
           <% end %>
         </div>
     </li>
