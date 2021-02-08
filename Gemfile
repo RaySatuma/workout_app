@@ -62,3 +62,5 @@ gem 'devise'
 gem 'rexml'
 
 gem 'capybara'
+
+gem 'rinku'
