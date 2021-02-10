@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     @posts =  Post.all
   end
 
+  def new 
+    @post = Post.new
+  end
+
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
@@ -28,7 +32,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:content)
+      params.require(:post).permit(:content,:title,:youtube_url,:note)
     end
 
     def correct_user
