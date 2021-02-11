@@ -5,7 +5,12 @@ class PostsController < ApplicationController
   def index
     @posts =  Post.all
   end
-
+  
+  def show
+    @post = Post.find(params[:id])
+    @video_id = youtube_video_id
+  end
+  
   def new 
     @post = Post.new
   end
@@ -15,7 +20,6 @@ class PostsController < ApplicationController
     if @post.save
       flash[:success] = 'メッセージを投稿しました'
       redirect_to root_url
-
     else
       @posts = current_user.feed_posts.order(id: :desc).page(params[:page]) 
       flash.now[:danger] = 'メッセージの投稿に失敗しました'
@@ -41,4 +45,12 @@ class PostsController < ApplicationController
         redirect_to root_url
       end
     end
-end
+
+    def youtube_video_id
+      # YoutubeのURLの正規表現
+      yt_Regexp = /(https\:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)/
+      @post.youtube_url.slice!(yt_Regexp)
+      @post.youtube_url.first(11)
+    end
+
+  end

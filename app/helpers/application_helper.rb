@@ -1,5 +1,5 @@
 module ApplicationHelper
-
+    require 'active_support'
     require "uri"
  
     def text_url_to_link text
@@ -14,7 +14,7 @@ module ApplicationHelper
         return text
       end
 
-
+      
 
 
       def youtube_embed(youtube_url)
