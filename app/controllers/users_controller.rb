@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @posts = @user.posts.order(id: :desc).page(params[:page])
     @favorites = @user.subscribe.page(params[:page])
     counts(@user)
+    @post = Post.find(params[:id])
   end
 
   def new

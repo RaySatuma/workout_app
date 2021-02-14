@@ -1,14 +1,6 @@
-<h1>hi</h1>
+<h1>ようこそ！Workout_appへ！</h1>
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-sm-4">
-      <%= form_with(model: @post, local: true) do |f| %>
-        <div class="form-group">
-          <%= f.text_area :content, class: 'form-control', rows: 5 %>
-        </div>
-        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
-      <% end %>
-    </aside>
     <div class="col-sm-8">
       <%= render 'posts/posts', posts: @posts %>
     </div>
@@ -20,6 +12,3 @@
   <% end %>
 </ul>
 <% end %>
-
-<%= @content_with_frame %>
-<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/jJrzIdDUfT4" frameborder="0" allowfullscreen></iframe>
