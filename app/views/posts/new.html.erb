@@ -8,6 +8,7 @@
         <%= form_with(model: @post, local: true) do |f| %>
            
             <%= render 'layouts/error_messages', model: f.object  %>
+             
 
             <div class="form-group">
                 <%= f.label :title, 'タイトル' %>
@@ -26,10 +27,10 @@
             
             <div>
                 <%= f.label :note, '注意点' %>
-                <%= f.text_field :note, class: 'form-control' %>
+                <%= f.text_area :note, class: 'form-control', rows:3 %>
             </div>
 
-            <%= f.submit '投稿', class: 'btn btn-primary btn-block'%>
+            <%= f.submit '投稿', class: 'btn btn-primary btn-block mt-5'%>
         <% end %>
     </div>
  </div>   
