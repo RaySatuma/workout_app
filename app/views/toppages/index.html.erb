@@ -1,14 +1,10 @@
-<h1>ようこそ！Workout_appへ！</h1>
-<% if logged_in? %>
-  <div class="row">
-    <div class="col-sm-8">
-      <%= render 'posts/posts', posts: @posts %>
-    </div>
-  </div>
-<% else %>
+<div class="top">
+  <h1>ようこそ！Workout_appへ！</h1>
+</div>
 <ul>
-  <% @user.each do |user|%>
-    <li><%= user.id %> : <%= user.name %> <%= user.email %></li>
+  <% @posts.each do |post|%>
+    <li><%= link_to post.title, post %></li>
   <% end %>
 </ul>
-<% end %>
+
+<%= paginate @posts %>
