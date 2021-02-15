@@ -19,6 +19,7 @@
           </div>
         </div>
       <div class="pl-2">
+            <% if logged_in?%>
               <% if current_user.fav?(@post) %>
                 <%= form_with(model: current_user.favorites.find_by(favorite_id: @post.id), local: true, method: :delete) do |f| %>
                 <%= hidden_field_tag :favorite_id, @post.id %>
@@ -30,4 +31,5 @@
                 <%= f.submit 'いいね', class: 'btn btn-primary btn-sm' %>
                 <% end %>
             <% end %>
+          <% end %>
             </div>
