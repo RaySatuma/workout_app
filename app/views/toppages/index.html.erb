@@ -1,10 +1,12 @@
 <div class="top">
   <h1>ようこそ！Workout_appへ！</h1>
 </div>
-<ul>
-  <% @posts.each do |post|%>
-    <li><%= link_to post.title, post %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <ul> 
+    <% @posts.each do |post|%>
+      <li><%= link_to post.title, post %></li>
+    <% end %>
+  </ul>
 
-<%= paginate @posts %>
+  <%= paginate @posts %>
+</div>
