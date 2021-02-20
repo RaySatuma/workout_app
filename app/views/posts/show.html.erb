@@ -6,9 +6,10 @@
             <div class="card-title">
                 <h3><%= @post.title %></h3>
             </div>
-          
-          <p class="mb-0">ユーザー名: <%=  link_to @post.user.name, @post.user %></p>
-          　<p>投稿日:<%=@post.user.created_at.strftime('%Y/%m/%d') %></p>
+            <div class="row">
+              <p class="mb-0">ユーザー名: <%=  link_to @post.user.name, @post.user %></p>
+            　<p>投稿日:<%=@post.user.created_at.strftime('%Y/%m/%d') %></p>
+            </div> 
             <div class="list-group list-group-flush">
             <div class="video-container">
               <iframe class="video-content" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
