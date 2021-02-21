@@ -21,6 +21,12 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
+  def guest_login
+    User.guest
+    flash[:success] = 'ゲストユーザーとしてログインしました。'
+    redirect_to root_path
+    session[:user_id] = User.guest.id
+  end
   private
 
   def login(email, password)
