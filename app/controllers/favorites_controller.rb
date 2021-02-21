@@ -4,13 +4,13 @@ class FavoritesController < ApplicationController
       post = Post.find(params[:favorite_id])
       current_user.fav(post)
       flash[:success] = 'いいねしました'
-      redirect_to current_user
+      redirect_back fallback_location: root_path
   end
 
   def destroy
       post = Post.find(params[:favorite_id])
       current_user.unfav(post)
       flash[:success] = 'いいねを解除しました'
-      redirect_to current_user
+      redirect_back fallback_location: root_path
   end
 end
