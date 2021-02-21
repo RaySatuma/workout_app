@@ -30,13 +30,13 @@
                 <% if current_user.fav?(@post) %>
                   <%= form_with(model: current_user.favorites.find_by(favorite_id: @post.id), local: true, method: :delete) do |f| %>
                   <%= hidden_field_tag :favorite_id, @post.id %>
-                  <%= f.submit 'いいね解除', class: 'btn btn-danger btn-sm' %> <%= @count_favorites%>
+                  <%= f.submit 'いいね解除', class: 'btn btn-danger btn-sm' %>
+
                 <% end %>
                 <% else %>
                   <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
                   <%= hidden_field_tag :favorite_id, @post.id %>
                   <%= f.submit 'いいね', class: 'btn btn-primary btn-sm' %>
-                  <%= @count_favorites%>
                   <% end %>
               <% end %>
             <% end %>
