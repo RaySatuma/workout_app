@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, only: [:new, :destroy]
   before_action :correct_user, only: [:destroy]
 
   def index
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     else
       @posts = current_user.feed_posts.order(id: :desc).page(params[:page]) 
       flash.now[:danger] = 'メッセージの投稿に失敗しました'
-      render 'toppages/index'
+      render :new
     end
   end
 
