@@ -60,18 +60,15 @@ h1,h3 {
   flex-wrap: wrap;
 }
 
-// .delete-btn{
-//   margin-left: 20px;
-//   margin-top: 30px;
-//   height: 40px;
-// }
-
 .buttons{
   display:flex;  
   margin-top: 10px;
     .follow-btn{
       margin-right: 10px;
   }
+    .edit-btn{
+      margin-left: 15px;
+    }
 }
 
 .btn-outline-danger{
@@ -83,6 +80,6 @@ h1,h3 {
   margin-left: 10px;
 }
 
-.comment{
+.comments{
   margin-left:20px;
 }

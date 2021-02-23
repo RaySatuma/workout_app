@@ -36,8 +36,11 @@
 </div>
     <div class="buttons">
         <%= render 'relationships/follow_button', user: @user %>
-        <%= render 'posts/delete_button', post: @post %>
         <%= render 'favorites/favorite_button'%>
+        <% if current_user == @post.user%>
+          <%= link_to "削除", @post, method: :delete, data: { confirm: "この投稿を削除しますか?" }, class: 'btn delete-btn btn-outline-danger' %>
+          <%= link_to "編集", edit_post_path(@post), class: 'btn edit-btn btn-outline-success' %>
+        <% end %>
     </div>
     <%= render 'comments/comments'%>
 </div>
