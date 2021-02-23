@@ -17,6 +17,6 @@
       <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー<span class="badge badge-secondary"><%= @count_followers %></span></a></li>
       <li class="nav-item"><a href="<%= favorites_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(favorites_user_path(@user)) %>">いいね<span class="badge badge-secondary"><%= @count_favorites %></span></a></li>
     </ul>
-    <%= render 'favorites/favorite_button', posts: @favorites %>
+    <%= render 'posts/posts', posts: @favorites %>
   </div>
 </div>

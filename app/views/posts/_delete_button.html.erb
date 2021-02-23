@@ -1,0 +1,3 @@
+<% if current_user == post.user%>
+    <%= link_to "削除", post, method: :delete, data: { confirm: "この投稿を削除しますか?" }, class: 'delete-btn btn btn-outline-danger' %>
+<% end %>

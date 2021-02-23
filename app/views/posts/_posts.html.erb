@@ -6,14 +6,7 @@
         <div>
           <%= link_to post.user.name, user_path(post.user) %><span class="text-muted"> 投稿日: <%= post.created_at.strftime('%Y/%m/%d') %></span>
         </div>
-        <div>
           <p><%= link_to post.title, post  %></p>
-        </div>
-        <div class="row">
-          <% if current_user == post.user%>
-            <%= link_to "削除", post, method: :delete, data: { confirm: "この投稿を削除しますか?" }, class: 'btn btn-danger btn-sm' %>
-          <% end %>
-        </div>
     </li>
   <% end %>
    <%= paginate posts %> 

@@ -9,6 +9,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @video_id = youtube_video_id
+    @userf = @post.user_id
+    @user = User.find_by(id: @userf)
+    @comments = @post.comments
+    @comment = @post.comments.build
   end
   
   def new 
@@ -27,10 +31,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      flash[:success] = '投稿を更新しました。'
+      redirect_to @post
+    else
+      flash.now[:danger] = '投稿が更新できませんでした。'
+    end
+  end
+
   def destroy
     @post.destroy
     flash[:success] = 'メッセージを削除しました'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
 
   private

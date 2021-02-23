@@ -1,0 +1,10 @@
+<% if logged_in? %>
+      <%= form_with(model: [@post, @comment], local: true) do |f| %>
+      <div class="form-group">
+        <%= f.text_area :content, class: "form-control", rows: 5 %>
+        <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
+          <i class="far fa-comments"></i> コメントする
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
