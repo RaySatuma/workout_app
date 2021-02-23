@@ -49,3 +49,36 @@ h1,h3 {
   border-width: 2px 0 0px 0;
 	border-style: dotted;
 }
+
+.prof-name{
+  margin-top: 40px;
+  margin-left: 10px;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+// .delete-btn{
+//   margin-left: 20px;
+//   margin-top: 30px;
+//   height: 40px;
+// }
+
+.buttons{
+  display:flex;  
+  margin-top: 10px;
+    .follow-btn{
+      margin-right: 10px;
+  }
+}
+
+.btn-outline-danger{
+  margin-left: 30px;
+}
+
+.favbutton{
+  width:120px;
+  margin-left: 10px;
+}

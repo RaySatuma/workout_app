@@ -9,6 +9,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @video_id = youtube_video_id
+    @userf = @post.user_id
+    @user = User.find_by(id: @userf)
   end
   
   def new 
@@ -30,7 +32,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     flash[:success] = 'メッセージを削除しました'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
 
   private

@@ -1,10 +1,10 @@
 <div class="top">
-  <h1>ようこそ！Workout_appへ！</h1>
+  <h1>ようこそ！Health Meterへ！</h1>
 </div>
 <div class="container">
   <ul> 
     <% @posts.each do |post|%>
-      <li><%= link_to post.title, post %></li>
+      <li><%= link_to post.title, post %><%= post.id %></li>
     <% end %>
   </ul>
 
