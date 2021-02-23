@@ -11,6 +11,8 @@ class PostsController < ApplicationController
     @video_id = youtube_video_id
     @userf = @post.user_id
     @user = User.find_by(id: @userf)
+    @comments = @post.comments
+    @comment = @post.comments.build
   end
   
   def new 

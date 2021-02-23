@@ -1,3 +1,4 @@
+<%if logged_in? %>
 <% unless current_user == user %>
   <% if current_user.following?(user) %>
     <%= form_with(model: current_user.relationships.find_by(follow_id: user.id), local: true, method: :delete) do |f| %>
@@ -10,4 +11,5 @@
       <%= f.submit 'フォローする', class: 'follow-btn btn btn-primary' %>
     <% end %>
   <% end %>
+<% end %>
 <% end %>

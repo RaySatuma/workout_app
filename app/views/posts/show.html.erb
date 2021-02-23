@@ -1,6 +1,6 @@
 <div class="container">
   
-<<<<<<< HEAD
+
 <div class="card">
     <div class="card-body">
       <div class="card-title">
@@ -36,53 +36,9 @@
 </div>
     <div class="buttons">
         <%= render 'relationships/follow_button', user: @user %>
-        <% if current_user == @post.user%>
-           <%= link_to "削除", @post, method: :delete, data: { confirm: "この投稿を削除しますか?" }, class: 'delete-btn btn btn-outline-danger' %>
-        <% end %>
+        <%= render 'posts/delete_button', post: @post %>
         <%= render 'favorites/favorite_button'%>
-  </div>
+    </div>
+    <%= render 'comments/comments'%>
 </div>
-=======
-        <div class="card">
-          <div class="card-body">
-            <div class="card-title">
-                <h1><%= @post.title %></h1>
-            </div>
-            <div class="card-user-name">
-              <div class="row">
-                <p>ユーザー名: <%=  link_to @post.user.name, @post.user %></p>
-              　<p>投稿日:<%=@post.user.created_at.strftime('%Y/%m/%d') %></p>
-              </div> 
-            </div>
-            <h3>参考動画</h3>
-            <div class=video-wrapper>
-              <div class="video-container">
-                <iframe class="video-content" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-            </div>
-            <h3>内容</h3>
-            <div class="card-content">
-            <p><%= simple_format(@post.content) %></p>
-            </div>
-            <h3>注意点</h3>
-            <div class="card-note">
-            <p><%= @post.note %></p>
-            </div>
-        <div class="pl-2">
-              <% if logged_in?%>
-                <% if current_user.fav?(@post) %>
-                  <%= form_with(model: current_user.favorites.find_by(favorite_id: @post.id), local: true, method: :delete) do |f| %>
-                  <%= hidden_field_tag :favorite_id, @post.id %>
-                  <%= f.submit 'いいね解除', class: 'btn btn-danger btn-sm' %>
 
-                <% end %>
-                <% else %>
-                  <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
-                  <%= hidden_field_tag :favorite_id, @post.id %>
-                  <%= f.submit 'いいね', class: 'btn btn-primary btn-sm' %>
-                  <% end %>
-              <% end %>
-            <% end %>
-              </div>
-  </div>
->>>>>>> dd4d575012819dab38a01e9bc01c3f557352e445

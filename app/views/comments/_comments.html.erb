@@ -1,0 +1,19 @@
+<div class="comment-wrapper border-top　mb-10">
+  <p class="mt-5">コメント一覧</p>
+    <% @comments.each do |c| %>
+      <div>
+        <div class="row">
+          <% unless c.user.blank? %>
+            <img class="rounded-circle img-fluid" src="<%= gravatar_url(@user, { size: 30}) %>" alt="">
+            <%= c.user.name %>
+          <% end %>
+        </div class="row">
+        <%= c.content %>
+        <% if c.user == current_user %>
+          <%= link_to 'コメントを削除', post_comment_path(post_id: @post, id: c.id), method: :delete, data: { confirm: '削除しますか? '}, class: 'btn btn-sm btn-outline-danger'%>
+        <% end %>
+      </div>
+      <br />
+    <% end %>
+  <%= render 'comments/comment_form'%>
+</div>
