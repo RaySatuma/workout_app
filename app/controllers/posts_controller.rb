@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     if @post.update(post_params)
       flash[:success] = '投稿を更新しました。'
-      redirect_to @post
+      redirect_to :show
     else
       flash.now[:danger] = '投稿が更新できませんでした。'
     end
