@@ -1,9 +1,5 @@
 # 使用技術
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
 
 * HTML / SCSS
 * Javascript
@@ -18,7 +14,7 @@ Things you may want to cover:
 CircleCI(CI/CD)
 ajaxを用いての非同期通信
 
-#機能一覧
+# 機能一覧
 
 *ユーザーの新規登録、編集
 *ゲストログイン
