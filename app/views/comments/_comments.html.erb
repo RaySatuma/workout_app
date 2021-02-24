@@ -1,19 +1,22 @@
 <div class="comment-wrapper border-top　mb-10">
-  <p class="mt-5">コメント一覧</p>
-    <% @comments.each do |c| %>
+  <h4 class="mt-5">コメント一覧</h4>
+    <% @comments.each do |comment| %>
       <div>
-        <div class="row">
-          <% unless c.user.blank? %>
-            <img class="rounded-circle img-fluid" src="<%= gravatar_url(@user, { size: 30}) %>" alt="">
-            <%= c.user.name %>
-          <% end %>
-        </div class="row comments">
-          <%= c.content %>
-          <% if c.user == current_user %>
-            <%= link_to 'コメントを削除', post_comment_path(post_id: @post, id: c.id), remote: true, method: :delete, data: { confirm: '削除しますか? '}, class: 'btn btn-sm btn-outline-danger'%>
+        <div class="commented-user row">
+        <% unless comment.user.blank?%>
+            <img class="rounded-circle img-fluid" src="<%= gravatar_url(@user, { size:30}) %>" alt="">
+            <p class="ml-2 mt-2"><%= comment.user.name %></p>
+            <p class="ml-2 mt-2"> 投稿日:<%=comment.created_at.strftime('%Y/%m/%d') %></p>
+        <% end %>
+        </div>
+        <div class="row comments">
+          <%= simple_format(comment.content) %>
+        </div>
+        <div class="comment-delete-btn">
+          <% if comment.user == current_user %>
+            <%= link_to 'コメントを削除', post_comment_path(post_id: @post, id: comment.id), method: :delete, data: { confirm: '削除しますか? '}, class: 'btn btn-sm btn-outline-danger'%>
           <% end %>
         </div>
-      <br />
     <% end %>
   <%= render 'comments/comment_form'%>
 </div>

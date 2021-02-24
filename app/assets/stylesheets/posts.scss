@@ -35,6 +35,13 @@
 h1,h3 {
   margin-top:10px ;
 }
+
+h4{
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-width: 0 0 2px 0;
+	border-style: dotted;
+}
 .card-user-name{
   border-width: 3px 0 0 0;
 	border-style: double;
@@ -80,6 +87,26 @@ h1,h3 {
   margin-left: 10px;
 }
 
+.comment-wrapper{
+
+}
+
 .comments{
   margin-left:20px;
+  
+    p{
+      margin-left:30px;
+    }
+}
+
+.commented-user{
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.comment-delete-btn{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 }
