@@ -4,8 +4,11 @@
       <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
       <div class="media-body">
         <div>
+        <%  if current_user == post.user %>
+          <%= post.user.name %><span class="text-muted"> 投稿日: <%= post.created_at.strftime('%Y/%m/%d') %></span>
+        <% else %>
           <%= link_to post.user.name, user_path(post.user) %><span class="text-muted"> 投稿日: <%= post.created_at.strftime('%Y/%m/%d') %></span>
-        </div>
+        <% end %>
           <p><%= link_to post.title, post  %></p>
     </li>
   <% end %>

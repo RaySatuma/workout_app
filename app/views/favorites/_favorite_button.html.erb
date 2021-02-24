@@ -3,11 +3,13 @@
           <%= form_with(model: current_user.favorites.find_by(favorite_id: @post.id), local: true, method: :delete) do |f| %>
             <%= hidden_field_tag :favorite_id, @post.id %>
             <%= f.submit 'いいね解除', class: 'favbutton btn btn-danger btn-md' %>
+            <%= @count_favorites %>
               <% end %>
           <% else %>
             <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
               <%= hidden_field_tag :favorite_id, @post.id %>
                 <%= f.submit 'いいね', class: 'favbutton btn btn-primary btn-md' %>
+                 <%= @count_favorites %>
                 <% end %>
           <% end %>
         <% end %>
