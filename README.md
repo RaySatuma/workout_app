@@ -1,24 +1,27 @@
-# README
+# 使用技術
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* HTML / SCSS
+* Javascript
+* Bootstrap 
+* Ruby 2.5.1
+* Rails 6.1.1
+* MySQL8.0
+* Doker/docker-compose
 
-* System dependencies
+今後実装予定：
+デプロイ環境　AWS(EC2, VPC, RDS, Route53, ACM, ALB, S3)
+CircleCI(CI/CD)
+ajaxを用いての非同期通信
 
-* Configuration
+#機能一覧
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*ユーザーの新規登録、編集
+*ゲストログイン
+*記事一覧表示
+*お気に入り機能
+*コメント機能
