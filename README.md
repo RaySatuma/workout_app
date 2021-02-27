@@ -10,9 +10,9 @@
 * MySQL8.0
 * Doker/docker-compose
 
-今後実装予定：
+今後実装予定：<br>
 デプロイ環境　AWS(EC2, VPC, RDS, Route53, ACM, ALB, S3)
-CircleCI(CI/CD)
+CircleCI(CI/CD)<br>
 ajaxを用いての非同期通信
 
 # 機能一覧
