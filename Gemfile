@@ -64,3 +64,7 @@ gem 'rexml'
 gem 'capybara'
 
 gem 'rinku'
+
+gem 'font-awesome-rails'
+
+gem 'font-awesome-sass'

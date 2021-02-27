@@ -32,6 +32,12 @@
 	margin-top: 20px;
 }
 
+.card-title2{
+  margin-top: 20px;
+  text-align: center;
+}
+
+
 h1,h3 {
   margin-top:10px ;
 }
@@ -58,7 +64,7 @@ h4{
 }
 
 .prof-name{
-  margin-top: 40px;
+  margin-top: 50px;
   margin-left: 10px;
   font-size: large;
   font-weight: bold;
@@ -71,6 +77,7 @@ h4{
   display:flex;  
   margin-top: 10px;
     .follow-btn{
+      margin-top: 0px;
       margin-right: 10px;
   }
     .edit-btn{
@@ -79,6 +86,7 @@ h4{
 }
 
 .btn-outline-danger{
+  
   margin-left: 15px;
 }
 
@@ -109,4 +117,22 @@ h4{
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
+}
+
+.follow-btn{
+  margin-top:10px;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  padding-top: -100px;
+  background: url(http://nelog.jp/wp-content/uploads/2016/03/heart_animation.png) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+}
+.heart:hover {
+  background-position: -2800px 0;
+  -webkit-transition: background 1s steps(28);
+  transition: background 1s steps(28);
 }
