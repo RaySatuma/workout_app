@@ -1,15 +1,13 @@
   <% if logged_in?%>
           <% if current_user.fav?(@post) %>
-          <%= form_with(model: current_user.favorites.find_by(favorite_id: @post.id), local: true, method: :delete) do |f| %>
-            <%= hidden_field_tag :favorite_id, @post.id %>
-            <%= f.submit 'いいね解除', class: 'favbutton btn btn-danger btn-md' %>
-           
+         <%= link_to favorite_path(favorite_id: @post), method: :delete, class: 'btn btn-outline-btn' do %>
+            <span class="fas fa-heart like-btn-unlike text-danger"></span>
+            <%= @count_like %>   
               <% end %>
           <% else %>
-            <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
-              <%= hidden_field_tag :favorite_id, @post.id %>
-                <%= f.submit 'いいね', class: 'favbutton btn btn-primary btn-md' %>
-                 
+            <%= link_to favorites_path(favorite_id: @post), method: :post, class: 'btn blue-outline-btn' do %>
+                <span class="far fa-heart like-btn"></span>
+                 <%= @count_like %>
                 <% end %>
           <% end %>
         <% end %>

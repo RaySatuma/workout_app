@@ -22,13 +22,13 @@
       <div class="card-content">
         <p><%= simple_format(@post.content) %></p>
       </div>
-      <h3>注意点</h3>
+      <h3>コツや注意点</h3>
       <div class="card-note">
-        <p><%= @post.note %></p>
+        <p><%= simple_format(@post.note) %></p>
       </div>
       <div class="pl-2">
           <div class="d-flex">
-          <img class="rounded-circle img-fluid" src="<%= gravatar_url(@user, { size: 100}) %>" alt="">
+          <img class="rounded-circle img-fluid mt-3" src="<%= gravatar_url(@user, { size: 100}) %>" alt="">
         <div class="prof-name">
           <%= @post.user.name %>
         </div> 
