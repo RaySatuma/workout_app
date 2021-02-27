@@ -3,6 +3,7 @@
 
 * HTML / SCSS
 * Javascript
+* jQuery
 * Bootstrap 
 * Ruby 2.5.1
 * Rails 6.1.1
