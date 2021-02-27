@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     @user = User.find_by(id: @userf)
     @comments = @post.comments
     @comment = @post.comments.build
+    counts(@user)
   end
   
   def new 

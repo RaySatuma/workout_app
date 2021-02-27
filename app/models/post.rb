@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :favorites
   has_many :comments
   
   validates :content, presence: true, length: { maximum: 255 }
