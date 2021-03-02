@@ -13,5 +13,5 @@ Turbolinks.start()
 ActiveStorage.start()
 
 $(function(){
-    $('.time-limit').fadeOut(5000);  //４秒かけて消えていく
+    $('.time-limit').fadeOut(4000);  //4秒かけて消えていく
   });
