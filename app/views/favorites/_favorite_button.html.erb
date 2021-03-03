@@ -1,13 +1,14 @@
   <% if logged_in?%>
-         <% if current_user.fav?(post) %>
-           <%= link_to favorite_path(favorite_id: post), method: :delete,  remote: true, class: 'btn btn-outline-btn' do %>
+         <% if current_user.fav?(@post) %>
+           <%= link_to favorite_path(favorite_id: @post, id: @post ), method: :delete,  remote: true, class: 'btn btn-outline-btn' do %>
             <span class="fas fa-heart like-btn-unlike text-danger"></span>
             <%= @count_like %>   
               <% end %>
           <% else %>
-            <%= link_to favorites_path(favorite_id: post), method: :post, remote: true, class: 'btn blue-outline-btn' do %>
+            <%= link_to favorites_path(favorite_id: @post), method: :post, remote: true, class: 'btn blue-outline-btn' do %>
                 <span class="far fa-heart like-btn"></span>
                  <%= @count_like %>
                 <% end %>
           <% end %>
   <% end %>
+

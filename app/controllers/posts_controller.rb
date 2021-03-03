@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @user = User.find_by(id: @userf)
     @comments = @post.comments
     @comment = @post.comments.build
-    @count_like = Favorite.where(favorite_id: @post).count
+    count_like
   end
   
   def new 
