@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
       @count_favorites = user.subscribe.count
     end
 
+    def count_like
+      @count_like = Favorite.where(favorite_id: @post).count
+    end
+
 end
