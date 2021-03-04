@@ -1,3 +1,4 @@
+<div id="favorites_buttons_<%= @post.id %>">
   <% if logged_in?%>
          <% if current_user.fav?(@post) %>
            <%= link_to favorite_path(favorite_id: @post, id: @post ), method: :delete,  remote: true, class: 'btn btn-outline-btn' do %>
@@ -11,4 +12,4 @@
                 <% end %>
           <% end %>
   <% end %>
-
+</div>
