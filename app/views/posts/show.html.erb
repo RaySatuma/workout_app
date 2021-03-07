@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'posts' %>
 <div class="container">
   
 
@@ -35,9 +36,7 @@
       </div>
 </div>
     <div class="buttons">
-      <div id="follow_button_<%= @user.id %>">
         <%= render 'relationships/follow_button', user: @user %>
-      </div>
         <%= render 'favorites/favorite_button', post: @post %>
         <% if current_user == @post.user%>
           <%= link_to "削除", @post, method: :delete, data: { confirm: "この投稿を削除しますか?" }, class: 'btn delete-btn btn-outline-danger' %>
