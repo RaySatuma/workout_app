@@ -1,3 +1,5 @@
-<% flash.each do |message_type, message| %>
-  <div class="time-limit alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
+<div id="flash-message">
+  <% flash.each do |message_type, message| %>
+    <div class="time-limit alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+</div>

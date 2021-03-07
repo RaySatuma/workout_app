@@ -4,13 +4,13 @@ class RelationshipsController < ApplicationController
   def create
     user = User.find(params[:follow_id])
     current_user.follow(user)
-    @msg = "#{user.name}さんをフォローしました。"
+    flash.now[:success] = "#{user.name}さんをフォローしました"
   end
 
   def destroy
     user = User.find(params[:follow_id])
     current_user.unfollow(user)
-    @msg = "{user.name}さんのフォローを解除しました。"
+    flash.now[:success] = "#{user.name}さんのフォローを解除しました"
   end
 
 private

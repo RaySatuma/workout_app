@@ -1,13 +1,15 @@
-<%if logged_in? %>
-  <% unless current_user == user %>
-    <% if current_user.following?(user) %>
-        <%= link_to relationship_path(follow_id: user, id: user), method: :delete, remote: true do %>
-        <span class="follow-btn btn btn-success btn-block">フォロー中</span>
-      <% end %>
-    <% else %>
-        <%= link_to relationships_path(follow_id: user), method: :post, remote: true do %>
-        <span class="follow-btn btn btn-primary btn-block">フォロー解除</span>
+<div id="follow_button_<%= @user.id %>">
+    <%if logged_in? %>
+      <% unless current_user == user %>
+        <% if current_user.following?(user) %>
+            <%= link_to relationship_path(follow_id: user, id: user), method: :delete, remote: true do %>
+            <span class="follow-btn btn btn-success btn-block">フォロー中</span>
+          <% end %>
+        <% else %>
+            <%= link_to relationships_path(follow_id: user), method: :post, remote: true do %>
+            <span class="follow-btn btn btn-primary btn-block">フォロー</span>
+          <% end %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-<% end %>
+</div>
