@@ -1,0 +1,3 @@
+$('#follow_button_<%= @user.id %>').html("<%= j(render("relationships/follow_button", user: @user)) %>");
+$('#flash-message').html("<%= j(render("layouts/flash_messages")) %>");
+setTimeout("$('.alert-success').slideUp('slow')", 4000);

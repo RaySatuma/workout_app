@@ -11,7 +11,12 @@ import "jquery"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+//= require rails-ujs
+
+
 
 $(function(){
-    $('.time-limit').fadeOut(4000);  //4秒かけて消えていく
+  setTimeout("$('.time-limit').slideUp('slow')", 4000);  //4秒かけて消えていく
   });
+
+  

@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+#flash-message{
+  position: fixed;
+  margin-top :-10px;
+  width: 100%;
+  z-index: 100;
+}
 
 .video-wrapper{
   border-width: 2px 0 0 0;
@@ -92,7 +98,7 @@ h4{
 
 .favbutton{
   width:120px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .comment-wrapper{
@@ -121,6 +127,7 @@ h4{
 
 .follow-btn{
   margin-top:10px;
+  margin-left:8px;
 }
 
 .heart {
