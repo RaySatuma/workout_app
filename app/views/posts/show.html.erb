@@ -8,10 +8,7 @@
           <h1><%= @post.title %></h1>
       </div>
       <div class="card-user-name">
-        <div class="row">
-          <p>ユーザー名: <%=  link_to @post.user.name, @post.user %></p>
-      　  <p>投稿日:<%=@post.user.created_at.strftime('%Y/%m/%d') %></p>
-        </div> 
+      　  <p>投稿日:<%=@post.user.created_at.strftime('%Y/%m/%d') %></p> 
       </div>
       <h3>参考動画</h3>
       <div class=video-wrapper>
@@ -31,7 +28,12 @@
           <div class="d-flex">
           <img class="rounded-circle img-fluid mt-3" src="<%= gravatar_url(@user, { size: 100}) %>" alt="">
         <div class="prof-name">
+        <% unless @post.user == current_user %>
+          <%= link_to @post.user.name, @post.user %>
+        <% else %>  
           <%= @post.user.name %>
+        <% end %>
+        
         </div> 
       </div>
 </div>
