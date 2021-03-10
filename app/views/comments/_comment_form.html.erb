@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <h3>コメントを投稿する</h3>
-      <%= form_with(model: [@post, @comment], local: true) do |f| %>
+      <%= form_with(model: [@post, @comment], data: { remote: true } ) do |f| %>
       <div class="form-group">
         <%= f.text_area :content, class: "form-control", rows: 5 %>
         <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
@@ -8,4 +8,4 @@
         </div>
         <% end %>
       <% end %>
-    <% end %>
+<% end %>
