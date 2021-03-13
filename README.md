@@ -5,11 +5,11 @@
 * Javascript
 * jQuery
 * Bootstrap 
-* Ruby ３．０．０
+* Ruby 3.0.0
 * Rails 6.1.1
 * MySQL8.0
 * Doker/docker-compose
-* ajax
+* Ajax
 
 今後実装予定：<br>
 デプロイ環境　AWS(EC2, VPC, RDS, Route53, ACM, ALB, S3)
