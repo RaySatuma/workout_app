@@ -9,6 +9,7 @@
 * Rails 6.1.1
 * MySQL8.0
 * Doker/docker-compose
+* ajax
 
 今後実装予定：<br>
 デプロイ環境　AWS(EC2, VPC, RDS, Route53, ACM, ALB, S3)
