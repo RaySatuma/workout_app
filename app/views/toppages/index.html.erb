@@ -1,13 +1,38 @@
 <%= stylesheet_link_tag 'toppages' %>
-<div class="top">
-  <h1>ようこそ！Health Meterへ！</h1>
+<div class="top2">
+<%= video_tag("/assets/videos/toppage_mv2.mp4", :autoplay => true, loop:  true, muted: true, style: "width:100%;") %>
+<%= image_tag("topimg-b.png",class: "topimg") %>
+  <div class="top-message">
+  <% if logged_in? %>
+    <h1>Health Meter</h1>
+    <p>フィットネスに関する事はこのサイトでShare.</p>
+  <% else %>
+    <h1>Health Meter</h1>
+    <p>フィットネスに関する事はこのサイトでShare.</p>
+    <p><%= link_to 'はじめる', login_path, class: 'btn btn-lg btn-outline-light'%></p>
+  <% end %>
 </div>
-<div class="container">
-  <ul> 
-    <% @posts.each do |post|%>
-      <li><%= link_to post.title, post %><%= post.id %></li>
-    <% end %>
-  </ul>
 
-  <%= paginate @posts %>
+
+<div class="monthly_recommend container">
+  <h3>今月のおすすめアイテム！</h3>
+    <%= image_tag("monthly_recommends/myprotein_elete.jpg", class: 'mr_image_item')  %>
+    <div class="description">
+      <h3 class="mb-3">メーカー:【 マイプロテイン 】</h3>
+      <h4>オール イン ワン パフォーム ブレンド エリート</h4>
+      <br>
+      <p>１食あたりのタンパク質摂取量なんと30g!<br>
+      世界アンチドーピング機関認定のオールインワンサプリ</p>
+        <div class="product-link">
+          <p><%= link_to '詳しくはこちらから', 'https://www.myprotein.jp/sports-nutrition/all-in-one-perform-blend-elite/11272852.html', target: :_blank %></p>
+        </div>
+    </div>
+    <br>
+    <div class="mr-book">
+      <h3 class="mr-book">今月のおすすめ書籍！</h3>
+      <%= image_tag("monthly_recommends/recommend_book", class: 'mr_image_book')%>
+      <h3 class="m-3">有名筋トレ系YouTuber、メトロン氏待望の書籍第一弾！</h3>
+      <%= link_to 'amazonで見てみる☑', 'https://www.amazon.co.jp/gp/product/4048968467/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=dean05-22&creative=1211&linkCode=as2&creativeASIN=4048968467&linkId=16fc17f250c0571fcb9fe38a47c01b98', target: :_blank, class: 'btn btn-warning'%>
+    </div>
+
 </div>
