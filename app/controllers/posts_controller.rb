@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @posts =  Post.all
+    @posts =  Post.all.page(params[:page]).per(9)
   end
   
   def show
@@ -55,9 +55,12 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:content,:title,:youtube_url,:note)
+      params.require(:post).permit(:content,:title,:youtube_url,:note, :target_muscle)
     end
 
+    def tag_params
+      params.require(:tag_).permit(:tag)
+    end
     def correct_user
       @post = current_user.posts.find_by(id: params[:id])
       unless @post
@@ -72,4 +75,11 @@ class PostsController < ApplicationController
       @post.youtube_url.first(11)
     end
 
+    def save_tag(post_tags)
+      post_tags.each do |new_name|
+      post_tag = Tag.find_or_create_by(name: new_name)
+      self.tags << post_tag
+    end
+  
+  end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_072113) do
+ActiveRecord::Schema.define(version: 2021_03_20_065600) do
 
   create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_072113) do
     t.string "title"
     t.string "youtube_url"
     t.text "note"
+    t.string "target_muscle"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -64,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_072113) do
   end
 
   create_table "tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "type"
+    t.string "tag_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

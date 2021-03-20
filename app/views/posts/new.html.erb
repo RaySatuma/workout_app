@@ -15,6 +15,32 @@
                 <%= f.text_field :title, class: 'form-control' %>
             </div>
             
+            <%= f.label '対象の部位'%><br>
+            <div class="form-group card">
+               <div class="row mt-3">
+               <%= f.radio_button :target_muscle, :chest, class: 'ml-3' %>
+               <%= f.label :target_musle, "胸", {value: :chest} %>
+             
+               <%= f.radio_button :target_muscle, :shoulder %>
+               <%= f.label :target_musle, "肩", {value: :shoulder} %>
+             
+               <%= f.radio_button :target_muscle, :back %>
+               <%= f.label :target_musle, "背中", {value: :back} %>
+               
+               <%= f.radio_button :target_muscle, :abs %>
+               <%= f.label :target_musle, "腹筋", {value: :abs} %>
+
+               <%= f.radio_button :target_muscle, :arms %>
+               <%= f.label :target_musle, "腕", {value: :arms} %>
+             
+               <%= f.radio_button :target_muscle, :legs %>
+               <%= f.label :target_musle, "脚", {value: :legs} %>
+             
+               <%= f.radio_button :target_muscle, :other %>
+               <%= f.label :target_musle, "その他", {value: :other} %>
+               </div>
+            </div>
+
             <div class="form-group">
                 <%= f.label :youtube_url, '参考動画のURL' %>
                 <%= f.text_field :youtube_url, class: 'form-control'%>

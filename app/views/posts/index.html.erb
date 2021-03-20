@@ -1,6 +1,34 @@
+<%= stylesheet_link_tag 'posts'%>
 <div class="container">
-<h1>メニュー一覧</h1>
-    <% @posts.each do |post|%>
-              <h3><%= link_to post.title , post %></h3>
-    <% end %>
+    <h1>メニュー一覧</h1>
+    <div class="adjust row">
+        <% @posts.each do |post| %>
+            <div class="wra">
+                <div class="card m-1" >
+                <h3><%= link_to post.title , post, class: "title" %></h3>
+                <div class="card-image">
+                    <% if post.target_muscle == 'chest'%>
+                        <%=  link_to image_tag('bodyparts_image/chest.jpg'), post%>
+                    <% elsif post.target_muscle == 'shoulder'%>
+                        <%=  link_to image_tag('bodyparts_image/shoulder.jpg'), post%>
+                    <% elsif post.target_muscle == 'back'%>
+                        <%=  link_to image_tag('bodyparts_image/back.jpg'), post%>
+                    <% elsif post.target_muscle == 'abs'%>
+                        <%=  link_to image_tag('bodyparts_image/abs.jpg'), post%>
+                    <% elsif post.target_muscle == 'arms'%>
+                        <%=  link_to image_tag('bodyparts_image/arms.jpg'), post%>
+                    <% elsif post.target_muscle == 'legs'%>
+                        <%=  link_to image_tag('bodyparts_image/legs.png'),post%>
+                    <% elsif post.target_muscle == 'other'%>
+                        <%=  link_to image_tag('bodyparts_image/other.png'),post%>
+                    <% elsif post.target_muscle = ''%>
+                        <%=  link_to image_tag('bodyparts_image/other.png'), post%>
+                    <% end %>
+                </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+         <%= paginate @posts%>
 </div>
+
