@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_23_053548) do
+ActiveRecord::Schema.define(version: 2021_03_20_065600) do
 
   create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_053548) do
     t.string "title"
     t.string "youtube_url"
     t.text "note"
+    t.string "target_muscle"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -51,6 +52,22 @@ ActiveRecord::Schema.define(version: 2021_02_23_053548) do
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
     t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
     t.index ["user_id"], name: "index_relationships_on_user_id"
+  end
+
+  create_table "tag_relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id", "tag_id"], name: "index_tag_relationships_on_post_id_and_tag_id", unique: true
+    t.index ["post_id"], name: "index_tag_relationships_on_post_id"
+    t.index ["tag_id"], name: "index_tag_relationships_on_tag_id"
+  end
+
+  create_table "tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "tag_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -68,4 +85,6 @@ ActiveRecord::Schema.define(version: 2021_02_23_053548) do
   add_foreign_key "posts", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
+  add_foreign_key "tag_relationships", "posts"
+  add_foreign_key "tag_relationships", "tags"
 end
