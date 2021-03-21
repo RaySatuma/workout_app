@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'posts'%>
 <div class="container">
-    <h1>メニュー一覧</h1>
+    <h1 class="text-center">メニュー一覧</h1>
     <div class="adjust row">
         <% @posts.each do |post| %>
             <div class="wra">
@@ -20,9 +20,9 @@
                     <% elsif post.target_muscle == 'legs'%>
                         <%=  link_to image_tag('bodyparts_image/legs.png'),post%>
                     <% elsif post.target_muscle == 'other'%>
-                        <%=  link_to image_tag('bodyparts_image/other.png'),post%>
+                        <%=  link_to image_tag('bodyparts_image/other.jpg'),post%>
                     <% elsif post.target_muscle = ''%>
-                        <%=  link_to image_tag('bodyparts_image/other.png'), post%>
+                        <%=  link_to image_tag('bodyparts_image/other.jpg'), post%>
                     <% end %>
                 </div>
                 </div>
