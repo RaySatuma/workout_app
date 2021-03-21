@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      post:
+    attributes:
+      post:
+        title: タイトル
+        content: トレーニング方法
+      user:
+         name: 名前
+         email: メールアドレス
+         password: パスワード 

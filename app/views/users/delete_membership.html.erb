@@ -14,10 +14,10 @@
       </div>
       <div class="text-center">
       <% if current_user.email == 'guest@example.com'%>
-        <p class="btn btn-primary"><%= link_to current_user.name+'削除を削除する', delete_membership_user_path(@user), class: 'text-white', data: {confirm: '閲覧モードでは削除できません'} %></p>
+        <p class="btn btn-primary"><%= link_to current_user.name+'を削除する', delete_membership_user_path(@user), class: 'text-white', data: {confirm: '閲覧モードでは削除できません'} %></p>
         <p class="btn btn-secondary"><%=  link_to "キャンセル", root_path, class: 'text-white' %></p>
       <% else %>
-        <p class="btn btn-primary"><%= link_to current_user.name+'削除を削除する', @user, method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'text-white' %></p>
+        <p class="btn btn-primary"><%= link_to current_user.name+'を削除する', @user, method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'text-white' %></p>
         <p class="btn btn-secondary"><%=  link_to "キャンセル", root_path, class: 'text-white' %></p>
       <% end %>
       </div>
