@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag 'delete_membership'%>
+<div class="container">
+  <div class="card">
+    <div class="text-center">
+      <div class="card-title">
+        <h1>退会</h1>
+        <p>本当に退会してもよろしいですか?</p>
+      </div>
+    </div>
+      <div class="card-body">
+        <h3 class="text-center"><%= current_user.name %>を削除する前にこちらをご覧ください</h3>
+        <li>アカウントを削除しなくてもユーザー名等を変更できます。上記のメニューバーにある<%= link_to 'ユーザー編集', edit_user_path(current_user) %>をお試しください。</li>
+        <li>このアカウントで使用しているユーザー名やメールアドレスを使用したい場合は、退会手続きをする前に<%= link_to '変更', edit_user_path(current_user) %>してください。<br>システム上から完全に削除されるまでの間、同じユーザー名やメールアドレスは使用できません。</li>
+      </div>
+      <div class="text-center">
+      <% if current_user.email == 'guest@example.com'%>
+        <p class="btn btn-primary"><%= link_to current_user.name+'削除を削除する', delete_membership_user_path(@user), class: 'text-white', data: {confirm: '閲覧モードでは削除できません'} %></p>
+        <p class="btn btn-secondary"><%=  link_to "キャンセル", root_path, class: 'text-white' %></p>
+      <% else %>
+        <p class="btn btn-primary"><%= link_to current_user.name+'削除を削除する', @user, method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'text-white' %></p>
+        <p class="btn btn-secondary"><%=  link_to "キャンセル", root_path, class: 'text-white' %></p>
+      <% end %>
+      </div>
+  </div>
+</div>

@@ -19,22 +19,22 @@
             <div class="form-group card">
                <div class="row mt-3">
                <%= f.radio_button :target_muscle, :chest, class: 'ml-3' %>
-               <%= f.label :target_musle, "胸", {value: :chest} %>
+               <%= f.label :target_musle, "胸", {value: :chest, class: 'mr-3'} %>
              
                <%= f.radio_button :target_muscle, :shoulder %>
-               <%= f.label :target_musle, "肩", {value: :shoulder} %>
+               <%= f.label :target_musle, "肩", {value: :shoulder, class: 'mr-3'} %>
              
                <%= f.radio_button :target_muscle, :back %>
-               <%= f.label :target_musle, "背中", {value: :back} %>
+               <%= f.label :target_musle, "背中", {value: :back, class: 'mr-3'} %>
                
                <%= f.radio_button :target_muscle, :abs %>
-               <%= f.label :target_musle, "腹筋", {value: :abs} %>
+               <%= f.label :target_musle, "腹筋", {value: :abs, class: 'mr-3'} %>
 
                <%= f.radio_button :target_muscle, :arms %>
-               <%= f.label :target_musle, "腕", {value: :arms} %>
+               <%= f.label :target_musle, "腕", {value: :arms, class: 'mr-3'} %>
              
                <%= f.radio_button :target_muscle, :legs %>
-               <%= f.label :target_musle, "脚", {value: :legs} %>
+               <%= f.label :target_musle, "脚", {value: :legs, class: 'mr-3'} %>
              
                <%= f.radio_button :target_muscle, :other %>
                <%= f.label :target_musle, "その他", {value: :other} %>
