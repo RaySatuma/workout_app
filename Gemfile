@@ -47,6 +47,10 @@ group :development do
   gem 'spring-commands-rspec'
 end
 
+group :production do # 本番環境
+  gem 'pg' # PostgreSQL
+end
+
 group :test do
   gem 'webdrivers' 
 end
