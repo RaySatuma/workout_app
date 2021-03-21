@@ -12,8 +12,13 @@
       </div>
       <h3>参考動画</h3>
       <div class=video-wrapper>
+        <% if @post.youtube_url == '' %>
+          <div class="image-container">
+          <%= image_tag('novideo.jpg', class: 'img')%>
+        <% else %>
         <div class="video-container">
           <iframe class="video-content" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% end %>
         </div>
       </div>
       <h3>内容</h3>
