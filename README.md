@@ -2,7 +2,7 @@
 
 
 * HTML / SCSS
-* Javascript
+* JavaScript
 * jQuery
 * Bootstrap 
 * Ruby 3.0.0
